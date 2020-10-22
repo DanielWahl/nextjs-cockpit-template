@@ -1,6 +1,6 @@
 const navigationAnim = (lastScrollTop, windowElement) => {
     let nav = document.getElementById("mainNav"); //.classList.add("background");
-    let headerHeight = document.getElementById("mainHeader").offsetHeight - 100 || 100;
+    let headerHeight = document.getElementById("mainHeader").offsetHeight || 100;
     let windowWidth = windowElement.innerWidth;
     let st = windowElement.pageYOffset;
     let isScrollUp = st < lastScrollTop;
@@ -8,9 +8,7 @@ const navigationAnim = (lastScrollTop, windowElement) => {
 
     if(windowWidth > 780) {
         if (isScrollUp) {
-            //if (st < 70) {
-                nav?.classList.remove("hidden");
-            //}
+            nav?.classList.remove("hidden");
         } else {
             if (st > headerHeight) {
                 nav?.classList.add("hidden");

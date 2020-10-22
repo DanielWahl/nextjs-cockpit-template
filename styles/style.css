@@ -327,7 +327,7 @@ header#mainHeader {
   max-width: 100%;
   height: auto;
   background: #303030 no-repeat center;
-  min-height: 70px;
+  min-height: calc(70px + 2rem);
 }
 header#mainHeader nav.fixed ~ .content {
   padding-top: calc(70px + 5rem);

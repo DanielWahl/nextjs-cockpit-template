@@ -18,7 +18,7 @@ interface Props {
 
 const Content = ({data, allPages, siteSettings, slides}:Props) => {
 
-	let content = data.content;
+	let content = data?.content;
 	// @ts-ignore
 	let gridColumns = grid[content?.length];
 

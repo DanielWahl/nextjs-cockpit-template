@@ -1,15 +1,29 @@
 import Head from 'next/head'
 import Layout from "../components/Layout/layout";
+import Content from "../components/Content/Content";
+import PageProps from '../types/page/PageProps';
 
-const ErrorPage = () => {
+const ErrorPage = (props:PageProps) => {
+
+    const currentPageData = () => {
+        for(let page of props.allPages){
+            if(page.alias === "404") {
+                return page;
+            }
+        }
+    }
+
     return (
         <Layout>
             <Head>
-                <title>Default Template - Error 404</title>
+                <title>Default Template - Home</title>
                 <link rel="icon" href="/favicon.ico" />
+                <meta
+                    name="description"
+                    content="This is the home-page"
+                />
             </Head>
-            <h2>Error 404</h2>
-            <h4>Page not found</h4>
+            <Content {...props} data={currentPageData()} />
         </Layout>
     )
 }
