@@ -21,7 +21,7 @@ const Footer = ({siteSettings}:Props) => {
 					</div>
 				</Scrollchor>
 
-				<div dangerouslySetInnerHTML={{__html: siteSettings.copyright}}/>
+				<div dangerouslySetInnerHTML={{__html: siteSettings?.copyright}}/>
 			</div>
 		</footer>
 	);

@@ -1,6 +1,6 @@
 import React from 'react';
 import AwesomeSlider from 'react-awesome-slider';
-import Vars from '../helpers/Vars';
+import Vars from '../../helpers/Vars';
 
 /****
  * Slider needs to be activated in Vars.js, so an Api-call will be fetched.

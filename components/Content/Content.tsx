@@ -23,18 +23,16 @@ const Content = ({data, allPages, siteSettings, slides}:Props) => {
 	let gridColumns = grid[content?.length];
 
 	return (
-		<main>
-			<div className={`page-components content grid ${gridColumns}`}>
-				{content && content.map((column:any, i:number) => {
-						const col_settings = column.settings;
-						const col_children = column.children || [];
-						// @ts-ignore
-						return <ContentColumn settings={col_settings} children={col_children} key={`contentcolumn-${i}`} />;
+		<div className={`page-components content grid ${gridColumns}`}>
+			{content && content.map((column:any, i:number) => {
+					const col_settings = column.settings;
+					const col_children = column.children || [];
+					// @ts-ignore
+					return <ContentColumn settings={col_settings} children={col_children} key={`contentcolumn-${i}`} />;
 
-					})
-				}
-			</div>
-		</main>
+				})
+			}
+		</div>
 	);
 
 

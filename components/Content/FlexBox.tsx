@@ -1,11 +1,11 @@
 import React from 'react';
-import Text from './Text';
-import Image from './Image';
+import Text from '../Items/Text';
+import Image from '../Items/Image';
 import Grid from './Grid';
-import Divider from './Divider';
-import Heading from './Heading';
-import PageBanner from './PageBanner';
-import Button from './Button';
+import Divider from '../Items/Divider';
+import Heading from '../Items/Heading';
+import PageBanner from '../Items/PageBanner';
+import Button from '../Items/Button';
 import Collection from './Collection';
 
 const defaultComponents:any = {

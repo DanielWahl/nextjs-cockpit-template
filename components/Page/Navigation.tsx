@@ -2,8 +2,8 @@ import React, { useState, useCallback } from "react";
 import Link from 'next/link'
 // @ts-ignore
 import Scrollchor from 'react-scrollchor';
-import PageEntry from '../types/page/PageEntry';
-import PageProps from '../types/page/PageProps';
+import PageEntry from '../../types/page/PageEntry';
+import PageProps from '../../types/page/PageProps';
 
 const Navigation = (props:PageProps) => {
 
@@ -52,20 +52,24 @@ const Navigation = (props:PageProps) => {
 		if(props.isHome) {
 			return (
 				<Scrollchor to="#mainHeader" className="navLink">
-					<div className="logo"> </div>
+					<a>
+						<div className="logo"> </div>
+					</a>
 				</Scrollchor>
 			)
 		} else {
 			return (
 				<Link href="/">
-					<div className="logo"> </div>
+					<a>
+						<div className="logo"> </div>
+					</a>
 				</Link>
 			)
 		}
 	}
 
 	const renderNavigation = () => {
-		return props.allPages?.map((page:PageEntry, i:number) => {
+		let pages = props.allPages?.map((page:PageEntry, i:number) => {
 			if(page.alias !== '404') {
 				return (
 					<li key={"nav-li-" + i}>
@@ -79,6 +83,24 @@ const Navigation = (props:PageProps) => {
 			}
 
 		});
+
+		return <ul>{pages}</ul>;
+	}
+
+	const renderStaticNavigation = () => {
+		return (
+			<ul>
+				<li>
+					<Link href="/aboutus"><a className="navLink">About Us</a></Link>
+				</li>
+				<li>
+					<Link href="/gallery"><a className="navLink">Gallery</a></Link>
+				</li>
+				<li>
+					<Link href="/contact"><a className="navLink">Contact</a></Link>
+				</li>
+			</ul>
+		)
 	}
 
 
@@ -94,9 +116,9 @@ const Navigation = (props:PageProps) => {
 					<span className="mobileToggle"> </span>
 					<span className="mobileToggle"> </span>
 					<span className="mobileToggle"> </span>
-					<ul>
-						{renderNavigation()}
-					</ul>
+
+					{renderStaticNavigation()}
+
 				</aside>
 			</div>
 		</nav>

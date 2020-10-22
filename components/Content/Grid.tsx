@@ -1,6 +1,6 @@
 import React from 'react';
 import ContentColumn from './ContentColumn';
-import ContentComponentData from "../types/component/ContentComponentData";
+import ContentComponentData from "../../types/component/ContentComponentData";
 
 const grid:any = {
 	0: '',

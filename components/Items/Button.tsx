@@ -1,5 +1,5 @@
 import React from 'react';
-import Props from "../types/singleComponents/NormalProps";
+import Props from "../../types/singleComponents/NormalProps";
 
 const Button = ({data}: Props):JSX.Element => {
 

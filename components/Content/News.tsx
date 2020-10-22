@@ -1,7 +1,7 @@
 import React, { useState, useEffect} from "react";
-import Vars from '../helpers/Vars';
-import {Link} from 'react-router-dom'
-import ArticleData from "../types/singleComponents/ArticleData";
+import Vars from '../../helpers/Vars';
+import ArticleData from "../../types/singleComponents/ArticleData";
+import Link from 'next/link'
 
 interface Props {
 	news?:any;
@@ -33,7 +33,7 @@ const News = (props:Props) => {
 
 			return (
 				<div className="news" key={`news-${index}`}>
-					<Link to={article.slug}>
+					<Link href={article.slug}>
 						<div className="news_container">
 							<img src={Vars.domain + article.headerimage?.path} alt={article.title}/>
 							<div className="news_details">
@@ -68,7 +68,7 @@ const News = (props:Props) => {
 
 						return (
 							<div className="news" key={`news-${index}`}>
-								<Link to={article.slug}>
+								<Link href={article.slug}>
 									<div className="news_container_three">
 										<img src={Vars.domain + article.headerimage.path} alt={article.title} />
 										<div className="news_details">

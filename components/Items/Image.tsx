@@ -1,6 +1,6 @@
 import React from 'react';
-import Vars from '../helpers/Vars';
-import ContentComponentData from "../types/component/ContentComponentData";
+import Vars from '../../helpers/Vars';
+import ContentComponentData from "../../types/component/ContentComponentData";
 
 const Image = ({settings}:ContentComponentData) => {
 	let imageUrl = Vars.domain + settings.image?.path;

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import Vars from '../helpers/Vars';
+import Vars from '../../helpers/Vars';
 import Link from 'next/link'
-import Props from "../types/singleComponents/NormalProps";
+import Props from "../../types/singleComponents/NormalProps";
 
 const Article = (props:Props) => {
 

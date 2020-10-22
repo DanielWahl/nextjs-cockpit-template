@@ -1,19 +1,19 @@
 import React from 'react';
-import Heading from './Heading';
-import Text from './Text';
-import Image from './Image';
-import Divider from './Divider';
+import Heading from '../Items/Heading';
+import Text from '../Items/Text';
+import Image from '../Items/Image';
+import Divider from '../Items/Divider';
 import Grid from './Grid';
-import PageBanner from './PageBanner';
-import Button from './Button';
+import PageBanner from '../Items/PageBanner';
+import Button from '../Items/Button';
 import FlexBox from './FlexBox';
 import Collection from './Collection';
 import News from './News';
-import PopupBox from './PopupBox';
-import Maps from './Maps';
+import PopupBox from '../Items/PopupBox';
+import Maps from '../Items/Maps';
 
-import ContentComponentData from "../types/component/ContentComponentData";
-import NormalProps from "../types/singleComponents/NormalProps";
+import ContentComponentData from "../../types/component/ContentComponentData";
+import NormalProps from "../../types/singleComponents/NormalProps";
 
 const defaultComponents:any = {
 	heading: Heading,

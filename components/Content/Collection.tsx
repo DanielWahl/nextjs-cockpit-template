@@ -1,6 +1,6 @@
 import React from 'react';
-import Product from './Product';
-import Props from "../types/singleComponents/NormalProps";
+import Product from '../Items/Product';
+import Props from "../../types/singleComponents/NormalProps";
 
 const Collection = ({settings}:Props) => {
 	let collections = settings.collection;
