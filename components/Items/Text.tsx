@@ -5,7 +5,7 @@ const Text = (props:ContentComponentData) => {
 
 	return (
 		<div className="component-text">
-			<p dangerouslySetInnerHTML={{__html: props.settings.text}}/>
+			<p dangerouslySetInnerHTML={{__html: props?.settings?.text}}/>
 		</div>
 	);
 }

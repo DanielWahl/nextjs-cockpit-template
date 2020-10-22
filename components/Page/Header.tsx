@@ -1,6 +1,5 @@
 import React from 'react';
 import Navigation from './Navigation';
-import Carousel from '../Items/Carousel';
 import Vars from '../../helpers/Vars';
 
 interface Props {

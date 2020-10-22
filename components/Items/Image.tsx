@@ -7,7 +7,7 @@ const Image = ({settings}:ContentComponentData) => {
 
 	return (
 		<div className="component-image">
-			<img src={imageUrl} alt={settings.image?.path}/>
+			<img src={imageUrl} alt={settings?.image?.path}/>
 		</div>
 	);
 }

@@ -25,7 +25,7 @@ const Article = (props:Props) => {
 		);
 	}
 
-	let article = props.data; //news.filter(news => news.slug === this.props.slug)[0];
+	let article = props.data;
 
 	let date = new Date(article._modified * 1000)
 	let dateString = date.getDate() + "." + (date.getMonth() + 1) + "." + date.getFullYear();
@@ -34,7 +34,7 @@ const Article = (props:Props) => {
 		<main>
 			<div className="content">
 				<div className="article">
-					<Link href="/news"><button className="full round primary">&lt; Back</button></Link>
+					<Link href="/news"><a><button className="full round primary">&lt; Back</button></a></Link>
 
 					<div className="article_container">
 						<img src={Vars.domain + article.headerimage?.path} alt={article.title} />

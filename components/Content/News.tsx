@@ -110,8 +110,6 @@ const News = (props:Props) => {
 			return renderThree();
 		default:
 			return renderAll();
-		//case "select":
-		//	return renderById();
 	}
 
 

@@ -10,10 +10,10 @@ const Gallery = (props) => {
             </Head>
             <section className="grid half-half">
                 <div className="frame">
-                    <h1>Test</h1>
+                    <h1>Gallery</h1>
                 </div>
                 <div className="frame">
-                    <h1>Test</h1>
+                    <h1>Gallery</h1>
                 </div>
             </section>
         </Layout>

@@ -9,12 +9,12 @@ const PopupBox = (props:ContentComponentData) => {
 		<article className={`page-components popupBox`}>
 			{(settings.open || settings.open === 'true') ? (
 				<details open>
-					<summary>{settings.title}</summary>
+					<summary>{settings?.title}</summary>
 					<ContentColumn {...props} settings={settings} children={children}/>
 				</details>
 			) : (
 				<details>
-					<summary>{settings.title}</summary>
+					<summary>{settings?.title}</summary>
 					<ContentColumn {...props} settings={settings} children={children}/>
 				</details>
 			)}

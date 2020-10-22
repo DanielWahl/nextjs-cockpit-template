@@ -1,55 +1,31 @@
-import React, { useState, useCallback } from "react";
+import React, { useState, useEffect } from "react";
 import Link from 'next/link'
 // @ts-ignore
 import Scrollchor from 'react-scrollchor';
 import PageEntry from '../../types/page/PageEntry';
 import PageProps from '../../types/page/PageProps';
+import navigationAnim from '../../helpers/NavigationAnim';
 
 const Navigation = (props:PageProps) => {
 
-	const [lastScrollTop, setLastScrollTop] = useState(0);
+	const [lastScrollTop, setLastScrollTop] = useState<number>(0);
 
-	useCallback(() => {
-		const handleScroll:any = () => {
-
-			let nav = document.getElementById("mainNav"); //.classList.add("background");
-			let headerHeight = (document.getElementById("mainHeader") as HTMLElement).offsetHeight - 100 || 100;
-			let windowWidth = window.innerWidth;
-			let st = window.pageYOffset;
-			let isScrollUp = st < lastScrollTop;
+	useEffect(() => {
+		const scrollEvent = () => {
+			let st:number = window.pageYOffset;
+			navigationAnim(lastScrollTop, window)
 			setLastScrollTop(st);
-
-			if(windowWidth > 780) {
-				if (isScrollUp) {
-					if (st < 70) {
-						nav?.classList.remove("background");
-					}
-				} else {
-					if (st > headerHeight) {
-						nav?.classList.add("background");
-					}
-				}
-			} else {
-				if(isScrollUp) {
-					if(st > 70) {
-						nav?.classList.add("background");
-					} else {
-						nav?.classList.remove("background");
-					}
-				} else {
-					nav?.classList.remove("background");
-				}
-			}
-
 		}
-		window.addEventListener('scroll', handleScroll());
+
+
+		window.addEventListener('scroll', scrollEvent);
 		return () => {
-			window.removeEventListener('scroll', handleScroll());
+			window.removeEventListener('scroll', scrollEvent);
 		};
 	}, [lastScrollTop]);
 
 	const renderLogo = () => {
-		if(props.isHome) {
+		if(props?.isHome) {
 			return (
 				<Scrollchor to="#mainHeader" className="navLink">
 					<a>
@@ -66,25 +42,6 @@ const Navigation = (props:PageProps) => {
 				</Link>
 			)
 		}
-	}
-
-	const renderNavigation = () => {
-		let pages = props.allPages?.map((page:PageEntry, i:number) => {
-			if(page.alias !== '404') {
-				return (
-					<li key={"nav-li-" + i}>
-						<Link href={"/" + page.alias}>
-							<a className="navLink">{page.name}</a>
-						</Link>
-					</li>
-				)
-			} else {
-				return null;
-			}
-
-		});
-
-		return <ul>{pages}</ul>;
 	}
 
 	const renderStaticNavigation = () => {
@@ -105,7 +62,7 @@ const Navigation = (props:PageProps) => {
 
 
 	return (
-		<nav className="" id="mainNav">
+		<nav className="fixed" id="mainNav">
 			<div className="content grid fraction-auto">
 				<aside className="logoContainer">
 					{renderLogo()}

@@ -358,9 +358,11 @@ nav#mainNav {
 }
 nav#mainNav.fixed {
   position: fixed;
-}
-nav#mainNav.fixed.background {
+  display: block;
   background: #303030;
+}
+nav#mainNav.fixed.hidden {
+  display: none;
 }
 @media screen and (max-width: 920px) {
   nav#mainNav .content aside.navContainer {

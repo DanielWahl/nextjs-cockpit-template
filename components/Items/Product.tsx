@@ -5,7 +5,7 @@ const Product = ({data}:Props) => {
 
 	return (
 		<div className="product">
-			<p>{data.display}</p>
+			<p>{data?.display}</p>
 		</div>
 	);
 }
