@@ -1,4 +1,16 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Example Next.js Template for Cockpit Headless CMS
+
+## About
+I wrote this default template to ensure a quick and ease start for Cockpit Headless CMS. (https://getcockpit.com/)
+
+It is based on Next.js, Typescript and Sass for styling.
+
+Feel free to use it as your kickstart for an headless React/Next.js project.
+I would appreciate every mention and comment.
+
+Check out my portfolio: https://danielwahl.lu
+
+A more precise documentation will follow.
 
 ## Getting Started
 
