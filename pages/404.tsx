@@ -1,31 +1,32 @@
-import Head from 'next/head'
-import Layout from "../components/Layout/layout";
+import Head from "next/head";
+import Layout from "../components/Layout/Layout";
 import Content from "../components/Content/Content";
-import PageProps from '../types/page/PageProps';
+import PageProps from "../types/page/PageProps";
+import HTMLHead from "../components/Page/HTMLHead";
+import React from "react";
+import Fetch from "../helpers/Fetch";
 
-const ErrorPage = (props:PageProps) => {
-
-    const currentPageData = () => {
-        for(let page of props.allPages){
-            if(page.alias === "404") {
-                return page;
-            }
-        }
-    }
-
+const ErrorPage: React.FC<PageProps> = (props) => {
     return (
         <Layout>
-            <Head>
-                <title>Default Template - Home</title>
-                <link rel="icon" href="/favicon.ico" />
-                <meta
-                    name="description"
-                    content="This is the home-page"
-                />
-            </Head>
-            <Content {...props} data={currentPageData()} />
+            <HTMLHead> </HTMLHead>
+            <Content {...props} data={props.page} />
         </Layout>
-    )
+    );
+};
+
+export async function getStaticProps({ params }) {
+    const siteSettings = await Fetch.fetchSiteSettings();
+    const page = await Fetch.fetchPage("/");
+    const errorPage = await Fetch.fetchErrorPage();
+
+    return {
+        props: {
+            siteSettings,
+            page,
+            errorPage,
+        },
+    };
 }
 
 export default ErrorPage;

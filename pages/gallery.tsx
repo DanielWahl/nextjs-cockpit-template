@@ -1,7 +1,8 @@
 import Head from 'next/head'
-import Layout from "../components/Layout/layout";
+import Layout from "../components/Layout/Layout";
+import PageProps from '../types/page/PageProps';
 
-const Gallery = (props) => {
+const Gallery = (props:PageProps) => {
     return (
         <Layout>
             <Head>
