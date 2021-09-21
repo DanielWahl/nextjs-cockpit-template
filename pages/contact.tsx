@@ -1,7 +1,8 @@
 import Head from 'next/head'
-import Layout from "../components/Layout/layout";
+import Layout from "../components/Layout/Layout";
+import PageProps from '../types/page/PageProps';
 
-const Contact = (props) => {
+const Contact = (props:PageProps) => {
     return (
         <Layout>
             <Head>

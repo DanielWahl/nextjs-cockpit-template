@@ -1,7 +1,10 @@
+import ComponentLink from "./../settings/siteSettings";
+
 export default interface PageProps {
-	data?: any;
-	allPages?: any;
-	siteSettings?: any;
-	slides?: any;
-	isHome?: boolean;
+    data?: any;
+    page?: any;
+    siteSettings?: SiteSettings;
+    slides?: any;
+    isHome?: boolean;
+    errorPage?: any;
 }

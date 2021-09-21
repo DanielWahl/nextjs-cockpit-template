@@ -1,29 +1,24 @@
-import React from 'react';
-// @ts-ignore
-import Scrollchor from 'react-scrollchor';
+import React from "react";
+import { Scrollchor } from "react-scrollchor";
+import PageProps from "../../types/page/PageProps";
 
-interface Props {
-	data?: any;
-	allPages?: any;
-	siteSettings?: any;
-	slides?: any;
-}
+const Footer = ({ siteSettings }: PageProps) => {
+    return (
+        <footer className="footer__main">
+            <div className="content">
+                <Scrollchor to="#mainHeader" className="navLink">
+                    <div className="goToTopButton">
+                        <span>&#10094;</span>
+                    </div>
+                </Scrollchor>
 
-const Footer = ({siteSettings}:Props) => {
-
-	return (
-		<footer>
-			<div className="content">
-
-				<Scrollchor to="#mainHeader" className="navLink">
-					<div className="goToTopButton">
-						<span>&#10094;</span>
-					</div>
-				</Scrollchor>
-
-				<div dangerouslySetInnerHTML={{__html: siteSettings?.copyright}}/>
-			</div>
-		</footer>
-	);
-}
+                <div
+                    dangerouslySetInnerHTML={{
+                        __html: siteSettings?.copyright,
+                    }}
+                />
+            </div>
+        </footer>
+    );
+};
 export default Footer;
